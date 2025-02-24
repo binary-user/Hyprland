@@ -1,5 +1,11 @@
 # Hyprland
 
+
+
+```
+git clone https://github.com/binary-user/Hyprland.git && cp -r Hyprland/* config
+```
+
 Use yay to downlaod below dependencies 
 
 **Dependencies**

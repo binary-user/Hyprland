@@ -1,9 +1,9 @@
 # Hyprland
 
-
+Follow the below command to clone and make changes to the file
 
 ```
-git clone https://github.com/binary-user/Hyprland.git && cp -r Hyprland/* config
+git clone https://github.com/binary-user/Hyprland.git && cp -r Hyprland/* ~/.config
 ```
 
 Use yay to downlaod below dependencies 

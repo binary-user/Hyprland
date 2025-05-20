@@ -24,4 +24,4 @@ Use yay to downlaod below dependencies
 yay -S ttf-jetbrains-mono ttf-fira-code ttf-hack ttf-iosevka ttf-cascadia-code ttf-inter ttf-roboto ttf-montserrat ttf-cantarell nerd-fonts-complete ttf-material-design-icons ttf-font-awesome ttf-nerd-fonts-symbols
 ```
 
-![linux](https://github.com/user-attachments/assets/c331c120-ffbd-44a9-9814-ca1cc9c1e701)
+![1747721368_grim](https://github.com/user-attachments/assets/5e4e9547-b1bb-4ae5-9654-baf1a08cbfd4)

@@ -1,181 +1,155 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    margin: 0;
     border: none;
-    text-shadow: none;
-    transition: none;
-    box-shadow: none;
+    border-radius: 18px;
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", sans-serif;
+    font-size: 14px;
     min-height: 0;
-    padding: 0;
-    border-radius: 0;
 }
 
 window#waybar {
-    background: #3c3835;
-    color: #fff4d2;
-    padding-right: 9px;
-    padding-left: 5px;
-    margin: 0;
-    border-radius: 19px;
+    background: rgba(18, 12, 24, 0.65);
+    border-bottom: 2px solid rgba(255, 0, 255, 0.5);
+    color: #ffffff;
+    border-radius: 18px;
+    margin: 5px 5px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+/* Left modules - CPU, Memory and Window */
+#cpu, 
+#memory,
+#window {
+    background: rgba(45, 25, 60, 0.7);
+    padding: 0 10px;
+    margin: 5px 4px;
+    border-radius: 14px;
+    border-bottom: 2px solid rgba(255, 0, 255, 0.5);
 }
 
-window#waybar.termite {
-    background-color: #3F3F3F;
+#cpu {
+    color: #7df9ff;
+    margin-left: 8px;
+    border-radius: 14px;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+#memory {
+    color: #ff7edb;
+    border-radius: 14px;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
+#window {
+    color: #ffffff;
+    margin-left: 6px;
+    border-radius: 14px;
+    /* Fixed width to prevent overflow */
 }
 
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* Hover effects for modules */
-#pulseaudio:hover,
-#workspaces:hover,
-#custom-bluetooth:hover,
-#custom-power:hover {
-    background-color: #A9A9A9;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #080808;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#battery,
-#custom-media,
-#mode,
-#mpd {
-    padding: 0;
-    color: #e0d7c6;
-    margin: 0px;
-    border-radius: 10px;
-}
-
+/* Center modules - Workspaces */
 #workspaces {
-    background-color: #3c3835;
-}
-
-#applet {
-    color: #fbf1c7;
-    padding: 0 10px;
-    margin: 5px 0px;
-}
-
-#network {
-  padding: 0 10px;
-}
-
-#cpu,
-#padding {
-  padding: 0 10px;
-  border-radius: 10px; 
-}
-
-#custom-bluetooth {
-  padding-right: 5px;
-}
-
-
-#clock.date {
-  padding: 0 10px;
-  background: #3c3835;
-}
-
-#custom-lock {
-    border-radius: 15px;
-    color: #928374;
-    margin: 5px 0px;
-    padding: 0 6px;
-    padding-right: 15px;
-    padding-left: 3px;
-}
-
-#potray {
-    border-radius: 10px;
-    color: #080808;
-    margin: 5px 0px;
-    padding: 0 10px;
-    padding-left: 7px;
+    background: rgba(30, 20, 40, 0.7);
+    border-radius: 14px;
+    margin: 5px 5px;
+    padding-left: 5px;
     padding-right: 5px;
 }
 
-#window{
-  padding: 0;
+#workspaces button {
+    padding: 5px;
+    color: #cdd6f4;
+    margin-right: 5px;
 }
 
-#workspaces {
-    border-radius: 15px;
-    margin: 5px 0px;
-    padding: 0 6px;
+#workspaces button.active {
+    color: #ff00ff;
+    background: rgba(90, 30, 120, 0.6);
+    border-radius: 12px;
 }
 
-/* If workspaces is the leftmost module, omit left margin *
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}*/
-
-/* If workspaces is the rightmost module, omit right margin 
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
-}*/
-
-#battery.charging,
-#battery.plugged {
-    color: #fbf1c7;
-    border-radius: 10px;
-    padding: 0;
+#workspaces button:hover {
+    background: rgba(90, 30, 120, 0.4);
+    color: #cdd6f4;
+    border-radius: 12px;
 }
 
-/* Using steps() instead of linear as a timing function to limit cpu usage */
+/* Right modules - Group/Applet (network, pulseaudio, bluetooth) */
+#applet,
+#network, 
+#pulseaudio,
+#custom-bluetooth {
+    background: rgba(45, 25, 60, 0.7);
+    padding: 0 10px;
+    margin: 5px 3px;
+    border-radius: 14px;
+    border-bottom: 2px solid rgba(255, 0, 255, 0.5);
+}
+
+#group-applet {
+    background: rgba(45, 25, 60, 0.7);
+    border-radius: 14px;
+    margin: 5px 5px;
+}
+
+#network {
+    color: #8a2be2;
+    border-radius: 14px;
+}
+
+#pulseaudio {
+    color: #c792ea;
+    border-radius: 14px;
+}
+
+#custom-bluetooth {
+    color: #7df9ff;
+    border-radius: 14px;
+}
+
+/* Clock and other potential right modules */
+#clock, 
+#battery,
+#tray {
+    padding: 0 10px;
+    margin: 5px 3px;
+    background: rgba(45, 25, 60, 0.7);
+    border-radius: 14px;
+    border-bottom: 2px solid rgba(255, 0, 255, 0.5);
+}
+
+#clock {
+    color: #00ffaa;
+    border-radius: 14px;
+    margin-right: 8px;
+}
+
+#battery.charging, #battery.plugged {
+    color: #50fa7b;
+}
+
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    color: #ff5555;
     animation-name: blink;
     animation-duration: 0.5s;
-    animation-timing-function: steps(12);
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
+#tray {
+    background-color: rgba(45, 25, 60, 0.7);
+    border-radius: 14px;
 }
 
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #ff00ff;
+}
+
+@keyframes blink {
+    to {
+        background-color: rgba(240, 0, 170, 0.7);
+        color: #000000;
+    }
+}

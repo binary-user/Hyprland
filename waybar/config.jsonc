@@ -2,16 +2,15 @@
 {
    
     "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 35, // Waybar height (to be removed for auto height)
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height (to be removed for auto height)
     "spacing": 5, // Gaps between modules (4px)
-    "margin-right": 1,
-    "margin-left": 1,
+    "margin-right": 8,
+    "margin-left": 8,
     "margin-top": 1,
     
    
     "modules-left": [
-    "hyprland/workspaces",
     "hyprland/window",
     "cpu",
     "memory"
@@ -19,25 +18,25 @@
 
     
     "modules-center": [
-      "custom/arch_logo"
+      "hyprland/workspaces"
     ],
 
 
     "modules-right": [
-        "mpd",
         "group/applet",
         "battery",
         "battery#bat2",
-        "group/potray",
         "clock#time",
         "clock#date",
-        "custom/lock"
+        "group/potray"
 
     ],
 
 "hyprland/window": {
     "format": "{class}",
     "max-length": 20,
+    "icon": true,
+    "icon-size": 18,
     "rewrite": {
       "": "<span foreground= '#458588'></span> hyprland",
       "~": " terminal",
@@ -46,23 +45,28 @@
   },
 
     // Modules configuration
-"hyprland/workspaces": {
+
+
+  "hyprland/workspaces": {
     "disable-scroll": true,
     "active-only": false,
     "all-outputs": true,
     "warp-on-scroll": false,
     "format": "{icon}",
     "format-icons": {
-      "1": "<span color='#cc241d' ></span>",
-      "2": "<span color='#98971a' ></span>",
-      "3": "<span color='#d79921' ></span>",
-      "4": "<span color='#458588' ></span>",
-      "5": "<span color='#b16286' ></span>",
-      "6": "<span color='#689d6a' >󰊠</span>",
-      "7": "<span color='#fe8019' ></span>",
-      "default": "<span color='#cc241d'>󰊠</span>"
+      "1": "<span color='#ff00ff' >あ</span>",
+      "2": "<span color='#8a2be2' >い</span>",
+      "3": "<span color='#7df9ff' >え</span>",
+      "4": "<span color='#ff1493' >お</span>",
+      "5": "<span color='#00ffff' >五</span>",
+      "6": "<span color='#9370db' >六</span>",
+      "7": "<span color='#ee82ee' >七</span>",
+      "8": "<span color='#da70d6' >八</span>",
+      "9": "<span color='#ff69b4' >九</span>",
+      "10": "<span color='#1e90ff' >そ</span>",
+      "default": "<span color='#ff00ff'>★</span>"
     }
-  },
+},  
 
 
 
@@ -181,7 +185,7 @@
     "battery": {
         "states": {
             // "good": 95,
-            "warning": 30,
+           // "warning": 30,
             "critical": 15
         },
         "format": "{capacity}% {icon}",
@@ -247,12 +251,6 @@
     },
 
 
-    /** "custom/power": {
-        "format": "⏻",
-        "on-click": "~/.config/rofi/scripts/powermenu_t5",
-        "tooltip": false
-    },**/
-
 
     "custom/bluetooth": {
     "exec": "~/.config/waybar/scripts/bluetooth.sh",   //This will just display the Bluetooth icon
@@ -268,7 +266,9 @@
 
     "wlr/taskbar": {
 		"format": "{icon}",
-        "spacing": 0,
+    "icon-spacing": 10,
+    "active-first": true,
+    "all-outputs": false,
 		"tooltip-format": "{title}",
 		"on-click": "activate",
 		"on-click-middle": "close",
@@ -292,16 +292,39 @@
   "group/applet": {
     "orientation": "horizontal",
     "modules": [
-      "custom/bluetooth","backlight","network","pulseaudio"
+      "custom/bluetooth","network","pulseaudio"
     ]
   },
    
   "group/potray": {
     "orientation": "horizontal",
     "modules": [
-      "tray"//,"custom/power"
+      "tray"
     ]
   },
+
+  "privacy": {
+	"icon-spacing": 4,
+	"icon-size": 15,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
+},
 
   "backlight": {
   "device": "intel_backlight",
